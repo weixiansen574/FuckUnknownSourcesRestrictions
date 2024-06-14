@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="xposeddescription">移除原生安装器安装未知来源权限检查</string>
+    <string name="app_name">去他妈的未知来源限制</string>
+</resources>
