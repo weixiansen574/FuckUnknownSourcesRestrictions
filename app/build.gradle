@@ -1,17 +1,17 @@
 plugins {
     id 'com.android.application'
 }
-
+def time = System.currentTimeMillis();
 android {
     namespace 'top.weixiansen574.fuckunknownsourcesrestrictions'
     compileSdk 33
 
     defaultConfig {
         applicationId "top.weixiansen574.fuckunknownsourcesrestrictions"
-        minSdk 21
+        minSdk 26
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
