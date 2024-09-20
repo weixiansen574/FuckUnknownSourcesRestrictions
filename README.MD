@@ -1,19 +1,13 @@
 ## 去他妈的未知来源限制
 
-这是一个XPosed/LSPosed模块，移除**原生安装器**的安装未知来源权限检查。启用后，`出于安全考虑，目前已禁止您的手机安装来自此来源的未知应用。您可以在“设置”中对此进行更改。`的警告就可以滚一边去了。不再需要申请，打开允许开关，直接安装！（除非你的应用主动判断并申请😅）
+这是一个XPosed/LSPosed模块，移除**原生安装器**的安装未知来源权限检查。启用后，`出于安全考虑，目前已禁止您的手机安装来自此来源的未知应用。您可以在“设置”中对此进行更改。`的警告就可以滚一边去了。不再需要申请，打开允许开关，直接安装！
 
-## 作用域
+### 适配安卓系统
+开发此模块的设备为MIUI安卓12环境，安卓12保证可用，若其他安卓不可用请发issues
 
-```xml
-<string-array name="xposed_scope">
-    <item>com.miui.packageinstaller</item>
-    <item>com.android.packageinstaller</item>
-</string-array>
-```
+### MIUI/澎湃OS优化
 
-说一下为啥要包含`com.miui.packageinstaller`
-
-缘由是MIUI安装器过于恶心，安装速度慢、收集安装应用的数据并上传（泄露隐私）、爱管闲事等，然后且用其他安装器系统或应用不默认使用，又或者不支持apks，故将原生的安装器直接改包名并使用核破解覆盖com.miui.packageinstaller。
+MIUI煞笔安装器，安装速度慢、收集安装应用的数据并上传（泄露隐私）、不支持apks、爱管闲事等。这里我没有使用类似“安装狮”之类的第三方安装器，关闭MIUI优化时，安装器会变成原生安装器`com.android.packageinstaller`，启用MIUI优化后原生安装器被hide住了，你unhide重启后又给你hide掉。解决方案是MT或ApkTools改包名为`com.miui.packageinstaller`，使用核破解覆盖安装替换掉原本的MIUI安装器，这样就不会没了（注意要改版本号比MIUI安装器的高，不然会被覆盖）。
 
 ## 为啥开发此模块
 

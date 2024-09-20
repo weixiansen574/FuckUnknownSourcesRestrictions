@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">FuckUnknownSourcesRestrictions</string>
     <string name="xposeddescription">remove packageinstaller  unknown sources restrictions</string>
-
 </resources>
